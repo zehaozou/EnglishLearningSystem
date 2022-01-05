@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="350.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.login.LoginViewController">
+   <children>
+      <StackPane prefHeight="350.0" prefWidth="630.0">
+         <children>
+            <GridPane prefHeight="319.0" prefWidth="563.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.3333740234375" minWidth="10.0" prefWidth="201.33329264322916" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="441.6666717529297" minWidth="10.0" prefWidth="429.3333740234375" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fx:id="leftImageView" fitHeight="361.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <SplitPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <items>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="349.0" prefWidth="427.0">
+                                 <top>
+                                    <Label minHeight="0.0" prefHeight="140.0" prefWidth="245.0" text="  英语学习系统" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font size="33.0" />
+                                       </font>
+                                       <BorderPane.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </BorderPane.margin>
+                                    </Label>
+                                 </top>
+                                 <center>
+                                    <VBox prefHeight="179.0" prefWidth="322.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Label fx:id="accountLabel" prefHeight="30.0" prefWidth="48.0" text="账号:">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="80.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="accountField" layoutX="374.0" layoutY="146.0" prefHeight="35.0" promptText="请输入管理员账号" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Label fx:id="passwordLabel" prefHeight="30.0" prefWidth="48.0" text="密码:">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="80.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <PasswordField fx:id="passwordField" prefHeight="35.0" promptText="请输入管理员密码" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <RadioButton fx:id="visitorButton" mnemonicParsing="false" onAction="#handleVisitorButtonAction" prefHeight="53.0" prefWidth="96.0" text="游客登录">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="80.0" />
+                                                   </HBox.margin>
+                                                </RadioButton>
+                                                <RadioButton fx:id="administratorButton" mnemonicParsing="false" onAction="#handleAdministratorButton" prefHeight="53.0" prefWidth="102.0" text="管理员登录">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="30.0" />
+                                                   </HBox.margin>
+                                                </RadioButton>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#handleLoginButtonAction" prefHeight="30.0" prefWidth="55.0" text="登录">
+                                                   <HBox.margin>
+                                                      <Insets left="80.0" />
+                                                   </HBox.margin></Button>
+                                                <Button fx:id="LogoutButton" mnemonicParsing="false" onAction="#handleLogoutButtonAction" prefHeight="30.0" prefWidth="55.0" text="退出">
+                                                   <HBox.margin>
+                                                      <Insets left="80.0" />
+                                                   </HBox.margin></Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </center>
+                                 <bottom>
+                                    <Label fx:id="errorInfoLabel" prefHeight="15.0" prefWidth="345.0" BorderPane.alignment="CENTER" />
+                                 </bottom>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.system.StudyViewController">
+   <children>
+      <HBox layoutX="118.0" layoutY="226.0" prefHeight="85.0" prefWidth="393.0">
+         <children>
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleSearchButtonAction" prefHeight="47.0" prefWidth="83.0" text="检索">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="testButton" mnemonicParsing="false" onAction="#handleTestButtonAction" prefHeight="48.0" prefWidth="87.0" text="测试">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButtonAction" prefHeight="48.0" prefWidth="81.0" text="退出">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Label layoutX="173.0" layoutY="70.0" prefHeight="47.0" prefWidth="291.0" text="欢迎使用英语学习系统！">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

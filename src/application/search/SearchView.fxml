@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="537.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.search.SearchViewController">
+    <children>
+        <TextField fx:id="getWord" layoutX="66.0" layoutY="27.0" promptText="请输入要查询的单词" />
+        <Button layoutX="248.0" layoutY="27.0" mnemonicParsing="false" onAction="#searchTheWordButtonAction" text="翻译" />
+        <TabPane fx:id="tabPane" layoutX="4.0" layoutY="70.0" prefHeight="496.0" prefWidth="794.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="查询结果">
+                    <content>
+                        <AnchorPane prefHeight="529.0" prefWidth="794.0">
+                            <children>
+                                <Text fx:id="sentence" layoutX="79.0" layoutY="260.0" text="sentence" />
+                                <Label layoutX="13.0" layoutY="21.0" text="单词:">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font></Label>
+                                <Text fx:id="word" layoutX="83.0" layoutY="33.0" text="word" />
+                                <Text fx:id="meaning" layoutX="80.0" layoutY="99.0" text="meaning" />
+                                <Text fx:id="ranking" layoutX="83.0" layoutY="200.0" text="ranking" />
+                                <Label layoutX="14.0" layoutY="356.0" />
+                                <Text fx:id="sentenceMeaning" layoutX="75.0" layoutY="368.0" text="sentenceMeaning" />
+                        <Label layoutX="13.0" layoutY="84.0" text="释义：">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="186.0" text="难度等级：">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="13.0" layoutY="245.0" text="例句：">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="354.0" text="例句释义：">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="135.0" text="词性:">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="partOfSpeech" layoutX="79.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="partOfSpeech" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="短文阅读">
+                    <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <TabPane fx:id="essayPane" layoutX="2.0" prefHeight="688.0" prefWidth="794.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="   阅读   ">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="essayTableView" prefHeight="159.0" prefWidth="794.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="idColumn" prefWidth="82.0" text="编号">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="id" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                                <TableColumn fx:id="titleColumn" prefWidth="710.0" text="标题">
+                                                                    <cellValueFactory>
+                                                                        <PropertyValueFactory property="title" />
+                                                                    </cellValueFactory>
+                                                                </TableColumn>
+                                                            </columns>
+                                                        </TableView>
+                                                        <TextArea fx:id="EnglishEssay" layoutX="14.0" layoutY="176.0" prefHeight="258.0" prefWidth="361.0" />
+                                                        <TextArea fx:id="ChineseEssay" layoutX="409.0" layoutY="175.0" prefHeight="259.0" prefWidth="369.0" />
+                                                        <Label layoutX="153.0" layoutY="159.0" text="英文">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font></Label>
+                                                        <Label layoutX="571.0" layoutY="159.0" text=" 中文">
+                                             <font>
+                                                <Font name="System Bold Italic" size="14.0" />
+                                             </font></Label>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+      <Button fx:id="returnButton" layoutX="573.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleReturnButton" text="返回主界面" />
+    </children>
+</AnchorPane>
